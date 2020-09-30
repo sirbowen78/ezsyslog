@@ -37,7 +37,7 @@ class SyslogHandler(BaseRequestHandler):
 if __name__ == "__main__":
     try:
         syslog = UDPServer(("0.0.0.0", 514), SyslogHandler)
-        log.info(f"EZ syslog starts, CTRL-C to stop...")
+        log.info("EZ syslog starts, CTRL-C to stop...")
         syslog.serve_forever(poll_interval=1)
     except KeyboardInterrupt:
         log.info("Ctrl-C detected, exit.")
